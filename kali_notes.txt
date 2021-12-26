@@ -1,0 +1,52 @@
+Kali linux after installation:
+
+// update kali new releases
+sudo apt-get update
+
+// update kali new packages   (It takes long full package install)
+sudo apt-get dist-upgrade -y
+
+// remove old packages
+sudo apt autoremove
+
+// add user
+sudo adduser newusername
+
+// change user password
+sudo passwd newusername
+
+// add user to sudo group  (-a -G: append Group)
+sudo usermod -a -G sudo newusername
+
+// show user groups membership
+id
+
+// Change to new user
+su - newusername
+
+
+////////////// wifi issues ///////////////
+
+// check wifi
+iwconfig
+
+// list all devices
+lspci
+
+// for intel
+sudo apt-get install firmware-iwlwifi
+
+// for broadcomm
+sudo apt-get install firmware-b43-installer
+
+
+-------
+// shows the release version, description, and operating system codename
+lsb_release -a
+
+
+// shows the kernel version and CPU architecture. ...
+hostnamectl 
+
+// version file contains build information for the OS
+/proc/version file contains build information for the OS
