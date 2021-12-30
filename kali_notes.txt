@@ -24,6 +24,9 @@ id
 // Change to new user
 su - newusername
 
+// Change to root
+sudo su
+
 
 ////////////// wifi issues ///////////////
 
