@@ -1,1 +1,1 @@
-# Linux-Kali
+# Linux-Kali (for learning pusrposes)
