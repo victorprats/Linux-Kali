@@ -1,2 +1,2 @@
 # Linux-Kali 
-(for learning pusrposes)
+(for learning purposes)
