@@ -1,0 +1,60 @@
+// ---------------------------------------------------------------------------
+// 				                       Netdiscover
+// ---------------------------------------------------------------------------
+// Netdiscover (network discovery)
+netdiscover -i eth0
+netdiscover -i eth0 -r 192.168.1.0/24
+
+// ---------------------------------------------------------------------------
+// 				                         nmap  
+// ---------------------------------------------------------------------------
+// Scan host discovery only (Disable port scanning): nmap -sn 192.168.1.0/24
+// Scan a subnet: nmap 192.168.1.0/24
+// Scan a range of IPs: nmap 192.168.1.1-20
+
+// Scan a domain: nmap scanme.nmap.org
+
+// Scan all ports, versions and OS: nmap <ip> -A
+// Scan a single Port: nmap -p 22 192.168.1.1
+// Scan a range of ports: nmap -p 1-100 192.168.1.1
+// Scan 100 most common ports (Fast): nmap -F 192.168.1.1
+// Scan all 65535 ports: nmap -p- 192.168.1.1
+// Scan OS version: nmap -O 192.168.1.1
+
+// Attempts to determine the version of the service running on port: nmap -sV 192.168.1.1 
+
+// Scan using TCP connect: nmap -sT 192.168.1.1
+// Scan using TCP SYN scan (default): nmap -sS 192.168.1.1
+// Scan UDP ports: nmap -sU -p 123,161,162 192.168.1.1
+// Scan selected ports - ignore discovery: nmap -Pn -F 192.168.1.1
+
+// Detect OS and Services: nmap -A 192.168.1.1
+// Standard service detection: nmap -sV 192.168.1.1
+// More aggressive Service Detection: nmap -sV --version-intensity 5 192.168.1.1
+// Lighter banner grabbing detection: nmap -sV --version-intensity 0 192.168.1.1
+
+// Save default output to file:
+nmap -oN outputfile.txt 192.168.1.1
+nmap 192.168.1.1 > output.txt
+
+// ---------------------------------------------------------------------------
+// 				                    john the ripper  
+// ---------------------------------------------------------------------------
+https://byte-mind.net/crackear-documentos-office-protegidos-con-contrasena/
+
+// Unzip rockyou.txt.gz
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+
+// ----------- Office document password cracker
+// Get office2john hash script
+# wget https://raw.githubusercontent.com/magnumripper/JohnTheRipper/bleeding-jumbo/run/office2john.py
+
+// Generate hash
+# python3 office2john.py prueba.docx > hash.txt
+
+# cat hash.txt 
+prueba.docx:$office$*2007*20*128*16*a7c7a4eadc2d90fb22c023c6324a6b49*abc5a7
+
+# john hash.txt	
+# john --wordlist=dictionary.txt hash.txt // Ex. john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt 
+# john --show hash.txt 
