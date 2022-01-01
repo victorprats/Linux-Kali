@@ -38,7 +38,7 @@ nmap -oN outputfile.txt 192.168.1.1
 nmap 192.168.1.1 > output.txt
 
 // ---------------------------------------------------------------------------
-// 				                     john the ripper  
+// 				     john the ripper  
 // ---------------------------------------------------------------------------
 https://byte-mind.net/crackear-documentos-office-protegidos-con-contrasena/
 
