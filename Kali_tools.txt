@@ -38,7 +38,7 @@ nmap -oN outputfile.txt 192.168.1.1
 nmap 192.168.1.1 > output.txt
 
 // ---------------------------------------------------------------------------
-// 				                    john the ripper  
+// 				                     john the ripper  
 // ---------------------------------------------------------------------------
 https://byte-mind.net/crackear-documentos-office-protegidos-con-contrasena/
 
@@ -49,12 +49,20 @@ sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 // Get office2john hash script
 # wget https://raw.githubusercontent.com/magnumripper/JohnTheRipper/bleeding-jumbo/run/office2john.py
 
-// Generate hash
-# python3 office2john.py prueba.docx > hash.txt
+// 1. Generate hash
+# python3 office2john.py test1.xlsx > hash.txt
 
-# cat hash.txt 
-prueba.docx:$office$*2007*20*128*16*a7c7a4eadc2d90fb22c023c6324a6b49*abc5a7
+// 2. View hash
+#  cat hash.txt
+$office$*2013*100000*256*16*4a7c935b4d20f3fa05d6e038290337a3*df5e7de0ee34368c4645d722f00cd7c2*9f10c53a06075a71fc02bca3e83ddc39e1fb8cd35c0aadac069af652095720b8
 
+// 3. Decrypt hash
 # john hash.txt	
+
+// 4. View password hash cracked
+# john --show hash.txt
+
+
+// Other ways...
 # john --wordlist=dictionary.txt hash.txt // Ex. john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt 
 # john --show hash.txt 
