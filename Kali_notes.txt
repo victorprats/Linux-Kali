@@ -1,5 +1,6 @@
-Kali linux after installation:
-
+// ------------------------------------------------------------
+// ----------------- Kali linux after installation ------------
+// ------------------------------------------------------------
 // update kali new releases
 sudo apt-get update
 
@@ -9,6 +10,9 @@ sudo apt-get dist-upgrade -y
 // remove old packages
 sudo apt autoremove
 
+// -----------------------------------------------------------
+// --------------------- User Management ---------------------
+// -----------------------------------------------------------
 // add user
 sudo adduser newusername
 
@@ -27,8 +31,23 @@ su - newusername
 // Change to root
 sudo su
 
+// -----------------------------------------------------------
+// ------------------ Package Management ---------------------
+// -----------------------------------------------------------
 
-////////////// wifi issues ///////////////
+// Display all packages installed
+dpkg --list
+
+// Remove specific package "abc"
+sudo apt --purge remove abc
+
+// If you don’t want to remove the configuration files, simply leave out the --purge command
+sudo apt remove abc
+
+
+// -----------------------------------------------------------
+// ---------------------- Wifi issues ------------------------
+// -----------------------------------------------------------
 
 // check wifi
 iwconfig
@@ -42,8 +61,10 @@ sudo apt-get install firmware-iwlwifi
 // for broadcomm
 sudo apt-get install firmware-b43-installer
 
+// -----------------------------------------------------------
+// ---------------------- System info ------------------------
+// -----------------------------------------------------------
 
--------
 // shows the release version, description, and operating system codename
 lsb_release -a
 
@@ -53,3 +74,19 @@ hostnamectl
 
 // version file contains build information for the OS
 /proc/version file contains build information for the OS
+
+---------
+// Check date and time status
+timedatectl status
+sudo timedatectl set-ntp true
+sudo timedatectl status
+
+systemctl restart ntp.service
+systemctl status ntp.service
+
+----------
+// Check CPU load and task manager
+mpstat
+htop
+top
+
