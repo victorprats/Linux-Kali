@@ -66,3 +66,21 @@ $office$*2013*100000*256*16*4a7c935b4d20f3fa05d6e038290337a3*df5e7de0ee34368c464
 // Other ways...
 # john --wordlist=dictionary.txt hash.txt // Ex. john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt 
 # john --show hash.txt 
+
+
+// ---------------------------------------------------
+// ----------- ZIP or RAR password cracker -----------
+// ---------------------------------------------------
+
+// 1. Generate hash
+# zip2john file > hash.txt
+
+// 2. View hash
+# cat hash.txt
+
+// 3. Decrypt hash
+# john hash.txt	
+
+// 4. View password hash cracked
+# john --show hash.txt
+
