@@ -16,6 +16,11 @@ lsb_release -a
 // -----------------------------------------------------------
 // --------------------- User Management ---------------------
 // -----------------------------------------------------------
+
+// List users
+cat /etc/passwd
+
+
 // add user
 sudo adduser newusername
 
@@ -33,6 +38,10 @@ su - newusername
 
 // Change to root
 sudo su
+
+// Change any user password
+from root terminal emulator
+passwd username
 
 // -----------------------------------------------------------
 // ------------------ Package Management ---------------------
